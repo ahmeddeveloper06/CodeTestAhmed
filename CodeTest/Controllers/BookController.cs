@@ -26,19 +26,19 @@ namespace CodeTest.Controllers
         {
             return Ok(await Mediator.Send(new GetAllBooksQuery()));
         }
-        [HttpGet(template: "{Author}")]
+        [HttpGet(template: "{Author}/Author")]
         public async Task<IActionResult> GetByAuthor(string Author)
         {
             return Ok(await Mediator.Send(new GetBookByAuthorQuery { Author = Author }));
         }
 
-        [HttpGet(template: "{Title}")]
+        [HttpGet(template: "{Title}/Title")]
         public async Task<IActionResult> GetByTitle(string Title)
         {
             return Ok(await Mediator.Send(new GetBookByTitleQuery { Title = Title }));
         }
 
-        [HttpGet(template: "{Describtion}/")]
+        [HttpGet(template: "{Describtion}/Describtion")]
         public async Task<IActionResult> GetByDescribtion(string Describtion)
         {
             return Ok(await Mediator.Send(new GetBookByDescribtionQuery { Describtion = Describtion }));
